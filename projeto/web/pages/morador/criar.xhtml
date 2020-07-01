@@ -1,0 +1,51 @@
+<ui:composition template="/WEB-INF/template/layout.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui">
+    <ui:define name="titulo">Meu Projeto Web</ui:define>
+    <ui:define name="conteudo">
+        <p:messages showDetail="false" showSummary="true" autoUpdate="true" />
+        <h:inputHidden id="id" value="#{moradorMB.morador.id}"/>
+        <h:panelGrid columns="2">
+            <f:facet name="header">Adicionar Morador</f:facet>
+            <p:outputLabel value="Matricula:" for="matricula" />
+            <p:inputText id="matricula" value="#{moradorMB.morador.matricula}" title="Matricula"
+                         required="true" requiredMessage="A Matricula é um campo obrigatório."/>
+            <p:outputLabel value="Nome:" for="nome" />
+            <p:inputText id="nome" value="#{moradorMB.morador.nome}" title="Nome"
+                         required="true" requiredMessage="O Nome é um campo obrigatório."/>
+            <p:outputLabel value="Telefone:" for="telefone" />
+            <p:inputText id="telefone" value="#{moradorMB.morador.telefone}" title="Telefone"
+                        required="true" requiredMessage="Telefone é um campo obrigatória."/>
+             <p:outputLabel value="Cpf:" for="cpf" />
+            <p:inputText id="cpf" value="#{moradorMB.morador.cpf}" title="Cpf"
+                        required="true" requiredMessage="O CPF é um campo obrigatória."/>
+             <p:outputLabel value="Email:" for="email" />
+            <p:inputText id="email" value="#{moradorMB.morador.email}" title="Email"
+                        required="true" requiredMessage="Email é um campo obrigatória."/>
+             <p:outputLabel value="Endereço:" for="endereco" />
+            <p:inputText id="endereco" value="#{moradorMB.morador.endereco}" title="Endereço"
+                        required="true" requiredMessage="Endereço é um campo obrigatória."/>
+             <p:outputLabel value="Cep:" for="cep" />
+            <p:inputText id="cep" value="#{moradorMB.morador.cep}" title="Cep"
+                        required="true" requiredMessage="Cep é um campo obrigatória."/>
+             <p:outputLabel value="Bairro:" for="bairro" />
+            <p:inputText id="bairro" value="#{moradorMB.morador.bairro}" title="Bairro"
+                        required="true" requiredMessage="Bairro é um campo obrigatória."/>
+             <p:outputLabel value="Uf:" for="uf" />
+            <p:inputText id="uf" value="#{moradorMB.morador.uf}" title="Uf"
+                        required="true" requiredMessage="Uf é um campo obrigatória."/>
+             <p:outputLabel value="Municipio:" for="municipio" />
+            <p:inputText id="municipio" value="#{moradorMB.morador.municipio}" title="Municipio"
+                        required="true" requiredMessage="Municipio é um campo obrigatória."/>
+            
+            
+            <p:commandButton value="Salvar"
+                             action="#{moradorMB.salvar(moradorMB.morador)}" />
+            <p:link value="Cancelar" outcome="/pages/moradores/listar?faces-redirect=true"/>
+        </h:panelGrid>
+    </ui:define>
+</ui:composition>
+
